@@ -24,5 +24,5 @@ app.get('/', function (req, res) {
 });
 
 app.listen(port, function() {
-  console.log('Server started on port: ' + port + '\n' + time)
-})
+  console.log('Server started on port: ' + port + '\n' + time);
+});
