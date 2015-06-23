@@ -1,0 +1,24 @@
+{
+  "name": "short-stories",
+  "version": "0.1.0",
+  "description": "A site for short stories",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mrbgit/short-stories.git"
+  },
+  "author": "Michael Bowen",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/mrbgit/short-stories/issues"
+  },
+  "homepage": "https://github.com/mrbgit/short-stories#readme",
+  "dependencies": {
+    "express": "^4.13.0",
+    "mongoose": "^4.0.6"
+  }
+}
