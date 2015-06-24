@@ -18,11 +18,11 @@ require('../server.js');
 describe('Test Story Routes', function (done) {
 
   // dump test database
-  after(function (done) {
-    mongoose.connection.db.dropDatabase(function () {
-      done();
-    });
-  });
+  // after(function (done) {
+  //   mongoose.connection.db.dropDatabase(function () {
+  //     done();
+  //   });
+  // });
 
   it('should create a new story with a post request', function (done) {
     chai.request('localhost:3000')
