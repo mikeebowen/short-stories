@@ -7,7 +7,10 @@
     "test": "test"
   },
   "scripts": {
-    "test": "./node_modules/mocha/bin/mocha test/**/*.js"
+    "pretest": "mongod --dbpath db --fork --logpath /dev/null",
+    "test": "./node_modules/mocha/bin/mocha test/**/*.js",
+    "posttest": "mongo admin --eval 'db.shutdownServer()' > /dev/null",
+    "start": "node server.js"
   },
   "repository": {
     "type": "git",
