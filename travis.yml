@@ -1,7 +1,9 @@
 language: node_js
 
+sudo: required
+
 before_script:
-  - mongod --fork --logpath /dev/null
+  - sudo service mondgod start
 
 node_js:
   "0.10"
