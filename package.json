@@ -7,7 +7,7 @@
     "test": "test"
   },
   "scripts": {
-    "pretest": "service mongod start",
+    "pretest": "mongod --fork --logpath /dev/null",
     "test": "./node_modules/mocha/bin/mocha test/**/*.js",
     "posttest": "mongo admin --eval 'db.shutdownServer()' > /dev/null",
     "start": "node server.js"
