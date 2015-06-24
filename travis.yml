@@ -1,10 +1,4 @@
 language: node_js
-
-sudo: required
-
-before_script:
-  - sudo service mondgod start
-
 node_js:
   "0.10"
 
