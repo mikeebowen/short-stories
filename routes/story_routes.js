@@ -20,4 +20,20 @@ module.exports = function (router) {
     });
   });
 
+  // create route to show all stories
+  router.get('/stories/showall', function (req, res) {
+    var storyArray = [];
+    Story.find({}, function (err, data) {
+      if (err) {
+        console.log(err);
+        return (res.status(500).json({msg: 'internal server error'}));
+      };
+      for (var i = 0; i < data.length; i++) {
+        storyArray.push(data[i].storyText);
+      }
+      // display all stories
+      res.json(storyArray);
+    });
+  });
+
 };

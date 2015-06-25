@@ -18,13 +18,13 @@ require('../server.js');
 describe('Test Story Routes', function (done) {
 
   // dump test database
-  // after(function (done) {
-  //   mongoose.connection.db.dropDatabase(function () {
-  //     done();
-  //   });
-  // });
+  after(function (done) {
+    mongoose.connection.db.dropDatabase(function () {
+      done();
+    });
+  });
 
-  it('should create a new story with a post request', function (done) {
+  it('should create a new story with a post request to /api/stories', function (done) {
     chai.request('localhost:3000')
     .post('/api/stories')
     .send({author: 'test author', categories: ['fiction', 'science fiction'], storyTitle: 'Test Title', storyText: 'test story text, blah blah blah something something'})
@@ -34,6 +34,16 @@ describe('Test Story Routes', function (done) {
       expect(res.body.categories).to.be.an('array');
       expect(res.body.storyTitle).to.eql('Test Title');
       expect(res.body.storyText).to.eql('test story text, blah blah blah something something');
+      done();
+    });
+  });
+
+  it('should show all stories on get request to /api/stories/showall', function (done) {
+    chai.request('localhost:3000')
+    .get('/api/stories/showall')
+    .end(function (err, res) {
+      expect(err).to.eql(null);
+      expect(res.body[0]).to.eql('test story text, blah blah blah something something');
       done();
     });
   });
