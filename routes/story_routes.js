@@ -29,7 +29,7 @@ module.exports = function (router) {
         return (res.status(500).json({msg: 'internal server error'}));
       };
       for (var i = 0; i < data.length; i++) {
-        storyArray.push(data[i].storyText);
+        storyArray.push(data[i].storyTitle + data[i].author + data[i].storyText);
       }
       // display all stories
       res.json(storyArray);
@@ -38,6 +38,7 @@ module.exports = function (router) {
 
   // create route to show specific story
   router.get('/stories/:category', function (req, res) {
+    // console.log(res.body.category);
     var cat = req.params.category.toLowerCase().replace(/\s+/g, '');
     Story.find({categories: cat}, function (err, data) {
       if (err) {
