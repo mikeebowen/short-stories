@@ -43,6 +43,7 @@ describe('Test Story Routes', function (done) {
     .get('/api/stories/showall')
     .end(function (err, res) {
       expect(err).to.eql(null);
+      expect(res.body.length).to.eql(1);
       expect(res.body[0]).to.eql('test story text, blah blah blah something something');
       done();
     });

@@ -36,4 +36,16 @@ module.exports = function (router) {
     });
   });
 
+  // create route to show specific story
+  router.get('/stories/:category', function (req, res) {
+    var cat = req.params.category.toLowerCase().replace(/\s+/g, '');
+    Story.find({categories: cat}, function (err, data) {
+      if (err) {
+        console.log(err);
+        return res.status(404).json({msg: 'page not found'});
+      }
+      res.json(data);
+    });
+  });
+
 };
