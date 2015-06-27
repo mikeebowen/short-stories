@@ -42,9 +42,12 @@ describe('Test Story Routes', function (done) {
     chai.request('localhost:3000')
     .get('/api/stories/showall')
     .end(function (err, res) {
-      expect(err).to.eql(null);
-      expect(res.body.length).to.eql(1);
-      expect(res.body[0]).to.eql('Test Titletest authortest story text, blah blah blah something something');
+      expect(err).to.eql(null)
+      expect(Array.isArray(res.body)).to.eql(true);
+      expect(res.body[0].author).to.eql('test author');
+      expect(res.body[0].categories).to.be.an('array');
+      expect(res.body[0].storyTitle).to.eql('Test Title');
+      expect(res.body[0].storyText).to.eql('test story text, blah blah blah something something');
       done();
     });
   });
@@ -59,7 +62,7 @@ describe('Test Story Routes', function (done) {
       expect(res.body[0].categories).to.be.an('array');
       expect(res.body[0].storyTitle).to.eql('Test Title');
       expect(res.body[0].storyText).to.eql('test story text, blah blah blah something something');
-      done()
+      done();
     });
   });
 
