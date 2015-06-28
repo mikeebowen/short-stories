@@ -16,6 +16,19 @@ chai.use(chaihttp);
 require('../server.js');
 
 describe('Test Story Routes', function (done) {
+  //create test story before each test to do tests on
+  beforeEach(function (done) {
+    var testStory = new Story({author: 'test author 2', categories: ['fiction', 'sciencefiction', 'adventure'], storyTitle: 'Test Title 2', storyText: 'test story text, blah blah blah something something'});
+
+    testStory.save(function (err, data) {
+      if (err) {
+        throw err;
+      }
+
+      this.testStory = data;
+      done();
+    }.bind(this));
+  });
 
   // dump test database
   after(function (done) {
@@ -23,6 +36,10 @@ describe('Test Story Routes', function (done) {
       done();
     });
   });
+
+  it('should create a test story in a beforeEach block', function () {
+    expect(this.testStory.author).to.eql('test author 2');
+  })
 
   it('should create a new story with a post request to /api/stories', function (done) {
     chai.request('localhost:3000')
@@ -44,9 +61,9 @@ describe('Test Story Routes', function (done) {
     .end(function (err, res) {
       expect(err).to.eql(null)
       expect(Array.isArray(res.body)).to.eql(true);
-      expect(res.body[0].author).to.eql('test author');
+      expect(res.body[0].author).to.eql('test author 2');
       expect(res.body[0].categories).to.be.an('array');
-      expect(res.body[0].storyTitle).to.eql('Test Title');
+      expect(res.body[0].storyTitle).to.eql('Test Title 2');
       expect(res.body[0].storyText).to.eql('test story text, blah blah blah something something');
       done();
     });
@@ -58,9 +75,9 @@ describe('Test Story Routes', function (done) {
     .end(function (err, res) {
       expect(err).to.eql(null)
       expect(Array.isArray(res.body)).to.eql(true);
-      expect(res.body[0].author).to.eql('test author');
+      expect(res.body[0].author).to.eql('test author 2');
       expect(res.body[0].categories).to.be.an('array');
-      expect(res.body[0].storyTitle).to.eql('Test Title');
+      expect(res.body[0].storyTitle).to.eql('Test Title 2');
       expect(res.body[0].storyText).to.eql('test story text, blah blah blah something something');
       done();
     });
