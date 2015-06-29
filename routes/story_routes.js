@@ -34,13 +34,23 @@ module.exports = function (router) {
 
   // create route to show specific story
   router.get('/stories/:category', function (req, res) {
-    // console.log(res.body.category);
     var cat = req.params.category.toLowerCase().replace(/\s+/g, '');
-    Story.find({categories: cat}, function (err, data) {
+    Story.find({'categories': cat}, function (err, data) {
       if (err) {
         console.log(err);
         return res.status(404).json({msg: 'page not found'});
       }
+      res.json(data);
+    });
+  });
+
+  router.get('/stories/showstory/:id', function (req, res) {
+    Story.find({'_id': req.params.id}, function (err, data) {
+      if (err) {
+        console.log(err);
+        return res.status(404).json({msg: 'page not found'});
+      }
+      console.log(data);
       res.json(data);
     });
   });
