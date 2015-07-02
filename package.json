@@ -38,9 +38,11 @@
     "grunt-karma": "^0.11.1",
     "grunt-simple-mocha": "^0.4.0",
     "grunt-webpack": "^1.0.8",
+    "jsx-loader": "^0.13.2",
     "karma": "^0.12.36",
     "mocha": "^2.2.5",
     "node-libs-browser": "^0.5.2",
+    "react": "^0.13.3",
     "superagent": "^1.2.0",
     "webpack": "^1.9.11",
     "webpack-dev-server": "^1.9.0"

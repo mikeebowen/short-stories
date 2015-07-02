@@ -15,6 +15,8 @@ db.on('open', function () {
 
 mongoose.connect(process.env.MONGOLAB_URI || 'mongodb://localhost/stories_development');
 
+app.use(express.static(__dirname + '/build'));
+
 require('./routes/story_routes')(storyRoutes);
 
 app.use('/api', storyRoutes);
