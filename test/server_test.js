@@ -93,7 +93,7 @@ describe('Test Story Routes', function (done) {
       expect(res.body[0].categories).to.be.an('array');
       expect(res.body[0].storyTitle).to.eql('Test Title 2');
       expect(res.body[0].storyText).to.eql('test story text, blah blah blah something something');
-      done();8
+      done();
     });
   });
 

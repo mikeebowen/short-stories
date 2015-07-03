@@ -18,6 +18,18 @@ module.exports = function(config) {
       'test/karma_tests/bundle.js'
     ],
 
+    //plugins to start browsers
+    plugins : [
+    'karma-junit-reporter',
+    'karma-phantomjs-launcher',
+    'karma-chrome-launcher',
+    'karma-firefox-launcher',
+    'karma-opera-launcher',
+    'karma-ie-launcher',
+    'karma-jasmine',
+    'karma-chai'
+    ],
+
 
     // list of files to exclude
     exclude: [

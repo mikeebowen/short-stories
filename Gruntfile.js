@@ -48,6 +48,23 @@ module.exports = function (grunt) {
           }
         }
       },
+      jasmine: {
+        src: ['test/karma_tests/*test.js', 'app/js/*.js', 'app/js/*.js'],
+        options: {
+          node: true,
+          jasmine: true,
+          globals: {
+            describe: true,
+            it: true,
+            before: true,
+            after: true,
+            beforeEach: true,
+            afterEach: true,
+            expect: true,
+            react: true
+          }
+        }
+      },
 
       // create jscs task
       jscs: {
@@ -62,7 +79,13 @@ module.exports = function (grunt) {
     simplemocha: {
       dev: {
         //tell simple mocha where the test files are
-        src: ['test/**/*.js']
+        src: ['test/**/*.js', '!test/karma_tests/*']
+      }
+    },
+    //create task to run karma
+    karma: {
+      test: {
+        configFile: 'karma.conf.js'
       }
     },
 
@@ -117,11 +140,13 @@ module.exports = function (grunt) {
 
   });
   // register linting task
-  grunt.registerTask('lint', ['jshint:dev', 'jshint:mocha']);
+  grunt.registerTask('lint', ['jshint:dev', 'jshint:mocha', 'jshint:jasmine']);
   // register mocha test task
   grunt.registerTask('mocha', ['simplemocha:dev']);
+  //register task for karma test
+  grunt.registerTask('jasmine', ['karma:test']);
   // register test task for all tests
-  grunt.registerTask('test', ['mocha']);
+  grunt.registerTask('test', ['jasmine', 'mocha']);
   // register build task
   grunt.registerTask('build:dev', ['webpack:client', 'copy:html', 'webpack:test']);
   // register task for building karma tests
