@@ -42,9 +42,25 @@
 /************************************************************************/
 /******/ ([
 /* 0 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	__webpack_require__(1);
+
+
+/***/ },
+/* 1 */
 /***/ function(module, exports) {
 
-	
+	'use strict';
+
+	describe('Test to see if tests are running', function () {
+	  it('should be able to run a test', function () {
+	    expect(1).toEqual(1);
+	  })
+	})
+
 
 /***/ }
 /******/ ]);
