@@ -17,7 +17,7 @@ module.exports = function (grunt) {
     jshint: {
       dev: {
         // tell jshint what check
-        src: ['Gruntfile.js', 'server.js', 'lib/**/*.js', 'models/**/*.js', 'routes/**/*.js', '!build/**'],
+        src: ['Gruntfile.js', 'server.js', 'lib/**/*.js', 'models/**/*.js', 'routes/**/*.js', '!build/**', '!test/client/bundle.js', '!test/karma_tests/bundle.js'],
         options: {
           node: true,
           globals: {
@@ -34,7 +34,7 @@ module.exports = function (grunt) {
 
       mocha: {
         // tell mocha where test files are
-        src: ['test/**/*.js'],
+        src: ['test/**/*.js', '!test/client/bundle.js', '!test/karma_tests/bundle.js'],
         options: {
           node: true,
           globals: {

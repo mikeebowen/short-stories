@@ -39,7 +39,7 @@ describe('Test Story Routes', function (done) {
 
   it('should create a test story in a beforeEach block', function () {
     expect(this.testStory.author).to.eql('test author 2');
-  })
+  });
 
   it('should create a new story with a post request to /api/stories', function (done) {
     chai.request('localhost:3000')
@@ -59,7 +59,7 @@ describe('Test Story Routes', function (done) {
     chai.request('localhost:3000')
     .get('/api/stories/showall')
     .end(function (err, res) {
-      expect(err).to.eql(null)
+      expect(err).to.eql(null);
       expect(Array.isArray(res.body)).to.eql(true);
       expect(res.body[0].author).to.eql('test author 2');
       expect(res.body[0].categories).to.be.an('array');
@@ -73,7 +73,7 @@ describe('Test Story Routes', function (done) {
     chai.request('localhost:3000')
     .get('/api/stories/fiction')
     .end(function (err, res) {
-      expect(err).to.eql(null)
+      expect(err).to.eql(null);
       expect(Array.isArray(res.body)).to.eql(true);
       expect(res.body[0].author).to.eql('test author 2');
       expect(res.body[0].categories).to.be.an('array');
@@ -87,7 +87,7 @@ describe('Test Story Routes', function (done) {
     chai.request('localhost:3000')
     .get('/api/stories/showstory/' + this.testStory._id)
     .end(function (err, res) {
-      expect(err).to.eql(null)
+      expect(err).to.eql(null);
       expect(Array.isArray(res.body)).to.eql(true);
       expect(res.body[0].author).to.eql('test author 2');
       expect(res.body[0].categories).to.be.an('array');
