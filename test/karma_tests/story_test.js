@@ -4,7 +4,7 @@ var TestUtils = React.addons.TestUtils;
 
 describe('story component test', function () {
 
-  describe('A feature', function () {
+  describe('Story component', function () {
 
     afterEach(function () {
       if (component && TestUtils.isCompositeComponent(component) && component.isMounted()) {
