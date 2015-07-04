@@ -19,7 +19,8 @@ var App = React.createClass({
       }
 
       this.setState({stories: res.body});
-    }.bind(this))
+
+    }.bind(this));
   },
 
   componentDidMount: function () {
