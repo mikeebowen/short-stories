@@ -2,8 +2,6 @@ var React = require('react');
 var Story = require('../../app/js/components/story.jsx');
 var TestUtils = React.addons.TestUtils;
 
-describe('story component test', function () {
-
   describe('Story component', function () {
 
     afterEach(function () {
@@ -25,4 +23,3 @@ describe('story component test', function () {
     });
 
   });
-})
