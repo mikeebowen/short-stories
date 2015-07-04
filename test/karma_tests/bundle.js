@@ -47,6 +47,7 @@
 	'use strict';
 
 	__webpack_require__(1);
+	__webpack_require__(!(function webpackMissingModule() { var e = new Error("Cannot find module \"./story_test.js\""); e.code = 'MODULE_NOT_FOUND'; throw e; }()));
 
 
 /***/ },
@@ -58,8 +59,8 @@
 	describe('Test to see if tests are running', function () {
 	  it('should be able to run a test', function () {
 	    expect(1).toEqual(1);
-	  })
-	})
+	  });
+	});
 
 
 /***/ }
