@@ -2,6 +2,7 @@
 
 var React = require('react');
 var request = require('superagent');
+var AllStoriesList = require('./components/all_stories_list.jsx');
 
 var App = React.createClass({
 
@@ -29,6 +30,7 @@ var App = React.createClass({
     return (
       <main>
         <h1>{this.state.title}</h1>
+        <AllStoriesList data={this.state.stories} />
       </main>
       );
   }
