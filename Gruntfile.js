@@ -111,6 +111,13 @@ module.exports = function (grunt) {
         output: {
           path: 'test/client/',
           file: 'bundle.js'
+        },
+        module: {
+          loaders: [
+          {
+            test: /\.jsx$/,
+            loader:'jsx-loader'
+          }]
         }
       },
       karma_test: {
@@ -118,6 +125,13 @@ module.exports = function (grunt) {
         output: {
           path: 'test/karma_tests/',
           file: 'bundle.js'
+        },
+        module: {
+          loaders: [
+          {
+            test: /\.jsx$/,
+            loader:'jsx-loader'
+          }]
         }
       }
     },
