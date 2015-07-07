@@ -81,7 +81,8 @@
 	    });
 
 	    beforeEach(function () {
-	      component = testUtilsAdditions.renderIntoDocument('<Story />');
+	      // component = testUtilsAdditions.renderIntoDocument('<Story />');
+	      TestUtils.renderIntoDocument(React.createElement('story'));
 	      component.props.data.storyTitle = 'front end test title';
 	      component.props.data.author = 'front end author';
 	      component.props.data.storyText = 'front end story text';
