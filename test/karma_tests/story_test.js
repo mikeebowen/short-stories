@@ -15,16 +15,16 @@ var testUtilsAdditions = require('react-testutils-additions');
     beforeEach(function () {
       component = TestUtils.renderIntoDocument(React.createElement('story'));
       component.props.storyTitle = 'front end test title';
-      component.props.storyTitle = 'front end test title';
       component.props.author = 'front end author';
       component.props.storyText = 'front end story text';
-      console.log('KKKKKKKKKKKK', component.props);
     });
 
     it('should display a story', function () {
       expect(component.props).toBeDefined();
       expect(component.props.storyTitle).toBeDefined();
       expect(component.props.storyTitle).toBe('front end test title');
+      expect(component.props.author).toBe('front end author');
+      expect(component.props.storyText).toBe('front end story text')
     });
 
   });
