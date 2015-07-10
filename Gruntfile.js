@@ -132,7 +132,8 @@ module.exports = function (grunt) {
             test: /\.jsx$/,
             loader:'jsx-loader'
           }]
-        }
+        },
+        background: true
       }
     },
 
