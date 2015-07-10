@@ -15,7 +15,7 @@ module.exports = function(config) {
 
     // list of files / patterns to load in the browser
     files: [
-      'test/karma_tests/bundle.js'
+        'test/karma_tests/*test.js'
     ],
 
     //plugins to start browsers
@@ -27,7 +27,8 @@ module.exports = function(config) {
     'karma-opera-launcher',
     'karma-ie-launcher',
     'karma-jasmine',
-    'karma-chai'
+    'karma-chai',
+    'karma-webpack'
     ],
 
 
@@ -39,7 +40,23 @@ module.exports = function(config) {
     // preprocess matching files before serving them to the browser
     // available preprocessors: https://npmjs.org/browse/keyword/karma-preprocessor
     preprocessors: {
+        'test/karma_tests/*test.js': ['webpack'],
+        // 'test/**/*_test.js': ['webpack']
     },
+
+    webpack: {
+            // karma watches the test entry points
+            // (you don't need to specify the entry option)
+            // webpack watches dependencies
+
+            // webpack configuration
+        module: {
+          loaders: [{
+            test: /\.jsx$/,
+            loader:'jsx-loader'
+          }]
+        }
+        },
 
 
     // test results reporter to use
