@@ -82,7 +82,7 @@
 	    });
 
 	    beforeEach(function () {
-	      component = TestUtils.renderIntoDocument(React.createElement('story'));
+	      component = TestUtils.renderIntoDocument(React.createElement('taco'));
 	      component.props.storyTitle = 'front end test title';
 	      component.props.author = 'front end author';
 	      component.props.storyText = 'front end story text';
