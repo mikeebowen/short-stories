@@ -13,18 +13,19 @@ var testUtilsAdditions = require('react-testutils-additions');
     });
 
     beforeEach(function () {
-      component = TestUtils.renderIntoDocument(React.createElement('story'));
-      component.props.storyTitle = 'front end test title';
-      component.props.author = 'front end author';
-      component.props.storyText = 'front end story text';
+      component = TestUtils.renderIntoDocument(React.createElement(Story));
+      component.props.data.storyTitle = 'front end test title';
+      component.props.data.author = 'front end author';
+      component.props.data.storyText = 'front end story text';
+      console.log('LLLLLLLLL', component);
     });
 
     it('should display a story', function () {
-      expect(component.props).toBeDefined();
-      expect(component.props.storyTitle).toBeDefined();
-      expect(component.props.storyTitle).toBe('front end test title');
-      expect(component.props.author).toBe('front end author');
-      expect(component.props.storyText).toBe('front end story text')
+      expect(component.props.data).toBeDefined();
+      expect(component.props.data.storyTitle).toBeDefined();
+      expect(component.props.data.storyTitle).toBe('front end test title');
+      expect(component.props.data.author).toBe('front end author');
+      expect(component.props.data.storyText).toBe('front end story text')
     });
 
   });
