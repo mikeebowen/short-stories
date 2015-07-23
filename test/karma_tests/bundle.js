@@ -83,10 +83,10 @@
 
 	    beforeEach(function () {
 	      component = TestUtils.renderIntoDocument(React.createElement(Story));
-	      console.log('LLLLLLLLL', component);
 	      component.props.data.storyTitle = 'front end test title';
 	      component.props.data.author = 'front end author';
 	      component.props.data.storyText = 'front end story text';
+	      console.log('LLLLLLLLL', component);
 	    });
 
 	    it('should display a story', function () {
