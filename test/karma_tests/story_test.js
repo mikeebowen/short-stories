@@ -25,7 +25,7 @@ var testUtilsAdditions = require('react-testutils-additions');
       expect(component.props.data.storyTitle).toBeDefined();
       expect(component.props.data.storyTitle).toBe('front end test title');
       expect(component.props.data.author).toBe('front end author');
-      expect(component.props.data.storyText).toBe('front end story text')
+      expect(component.props.data.storyText).toBe('front end story text');
     });
 
   });
