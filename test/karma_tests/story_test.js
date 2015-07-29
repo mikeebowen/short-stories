@@ -6,19 +6,15 @@ var testUtilsAdditions = require('react-testutils-additions');
   describe('Story component', function () {
     var component;
 
-    afterEach(function () {
-      // if (component && testUtilsAdditions.isCompositeComponent(component) && component.isMounted()) {
-      //   React.unmountComponentAtNode(component.getDOMNode().parent);
-      // }
-    });
-
     beforeEach(function () {
-      component = TestUtils.renderIntoDocument(React.createElement(Story));
-      component.props.data.storyTitle = 'front end test title';
-      component.props.data.author = 'front end author';
-      component.props.data.storyText = 'front end story text';
-      console.log('LLLLLLLLL', component);
-    });
+      var element = React.createElement(Story);
+      element.props.data = {
+        storyTitle: 'front end test title',
+        author : 'front end author',
+        storyText : 'front end story text'
+      };
+      component = TestUtils.renderIntoDocument(element);
+      });
 
     it('should display a story', function () {
       expect(component.props.data).toBeDefined();
