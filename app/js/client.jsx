@@ -11,14 +11,15 @@ var React = require('react');
 var Router = require('react-router-component');
 var Locations = Router.Locations;
 var Location = Router.Location;
-var {MainPage} = require('./components/views/app.jsx');
+var MainPage = require('./components/views/app.jsx');
 
 var App = React.createClass({
 
-  render: function() {
+  render: function () {
     return (
       <Locations>
         <Location path="/" handler={MainPage} />
+        <Location path="/taco" handler={MainPage} />
       </Locations>
     )
   }
