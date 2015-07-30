@@ -1,10 +1,3 @@
-// 'use strict';
-
-// var React = require('react');
-// var App = require('./components/views/app.jsx');
-
-// React.render(<App />, document.body);
-
 'use strict';
 
 var React = require('react');
@@ -20,11 +13,10 @@ var App = React.createClass({
     return (
       <Locations>
         <Location path="/" handler={MainPage} />
-        <Location path="/:category" handler={CategoryPage} />
+        <Location path="/category" handler={CategoryPage} />
       </Locations>
     )
   }
 })
 
-React.render(React.createElement(App), document.body)
-
+React.render(<App />, document.body)
