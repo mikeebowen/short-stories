@@ -7,7 +7,7 @@ var AllStoriesList = require('../all_stories_list.jsx');
 module.exports = React.createClass({
 
   getInitialState: function () {
-    return {stories: [], title: 'Category'};
+    return {stories: [], title: 'Categoryes'};
   },
 
   showAllStories: function () {
