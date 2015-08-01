@@ -2,7 +2,7 @@
 
 var React = require('react');
 var request = require('superagent');
-var AllStoriesList = require('../all_stories_list.jsx');
+var StoriesList = require('../stories_list.jsx');
 
 module.exports = React.createClass({
 
@@ -31,7 +31,7 @@ module.exports = React.createClass({
     return (
       <main>
         <h1>{this.state.title}</h1>
-        <AllStoriesList data={this.state.stories} />
+        <StoriesList data={this.state.stories} />
       </main>
       );
   }
