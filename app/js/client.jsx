@@ -11,7 +11,7 @@ var App = React.createClass({
 
   render: function () {
     return (
-      <Locations>
+      <Locations hash>
         <Location path="/" handler={MainPage} />
         <Location path="/category" handler={CategoryPage} />
       </Locations>
@@ -20,3 +20,23 @@ var App = React.createClass({
 })
 
 React.render(<App />, document.body)
+
+// var ReactRouter = require('react-router');
+// var Router = ReactRouter.Router;
+// var Route = ReactRouter.Route;
+// var Link = ReactRouter.Link;
+
+// var App = React.createClass({
+
+//   render: function () {
+//     return (
+//       <Router history={history}>
+//         <Route path="/" component={MainPage} />
+//         <Route path="about" component={CategoryPage} />
+//       <Route path="*" component={NoMatch} />
+//       </Router>
+//       )
+//   }
+// })
+
+// React.render(<App />, document.body);
