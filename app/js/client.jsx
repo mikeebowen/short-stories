@@ -13,7 +13,7 @@ var App = React.createClass({
     return (
       <Locations hash>
         <Location path="/" handler={MainPage} />
-        <Location path="/category" handler={CategoryPage} />
+        <Location path="/stories/:category" handler={CategoryPage} />
       </Locations>
     )
   }

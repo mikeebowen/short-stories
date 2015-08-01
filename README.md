@@ -18,4 +18,6 @@ To show a single category, send a get request to /api/stories/ + category. So to
 ######To Do
 -add karma tests to travis-ci
 
--add view to show stories by category
+-add auth
+
+-add input form

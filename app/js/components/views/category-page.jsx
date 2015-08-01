@@ -7,12 +7,12 @@ var AllStoriesList = require('../all_stories_list.jsx');
 module.exports = React.createClass({
 
   getInitialState: function () {
-    return {stories: [], title: 'Categories'};
+    return {stories: [], title: this.props.category};
   },
 
   showAllStories: function () {
     request
-    .get('/api/stories/showall')
+    .get('/api/stories/' + this.props.category)
     .end(function (err, res) {
       if (err) {
         return console.log(err);
