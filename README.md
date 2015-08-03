@@ -21,3 +21,5 @@ To show a single category, send a get request to /api/stories/ + category. So to
 -add auth
 
 -add input form
+
+-add log-in form
