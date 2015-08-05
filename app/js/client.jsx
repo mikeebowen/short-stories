@@ -6,6 +6,7 @@ var Locations = Router.Locations;
 var Location = Router.Location;
 var MainPage = require('./components/views/main-page.jsx');
 var CategoryPage = require('./components/views/category-page.jsx');
+var FormPage = require('./components/views/story-form-page.jsx');
 
 var App = React.createClass({
 
@@ -14,6 +15,7 @@ var App = React.createClass({
       <Locations hash>
         <Location path="/" handler={MainPage} />
         <Location path="/stories/:category" handler={CategoryPage} />
+        <Location path="/addstory" handler={FormPage} />
       </Locations>
     )
   }
