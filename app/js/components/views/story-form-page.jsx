@@ -13,7 +13,7 @@ module.exports = React.createClass({
   submit: function (storyObj) {
     request
     .post('/api/stories')
-    .send(noteObj)
+    .send(storyObj)
     .end(function (err, res) {
       if (err) {
         return console.log(err);
@@ -27,7 +27,7 @@ module.exports = React.createClass({
         <h1>{this.state.title}</h1>
         <StoryForm submit={this.submit}/>
       </main>
-      );
+      )
   }
 
 });
