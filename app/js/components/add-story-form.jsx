@@ -22,12 +22,13 @@ module.exports = React.createClass({
         <input type="checkbox" ref="categories" value="fiction">CreepyPasta</input>
         <input type="checkbox" ref="categories" value="fiction">Horror</input>
         <input type="checkbox" ref="categories" value="fiction">Monsters</input>
+        <br />
         <input ref="storyTitle" placeholder="Title" />
+        <br />
         <input ref="author" placeholder="Author" />
-        <vbox>
-          <label value="Write your Creepypasta!" />
-          <textbox ref="storyText" />
-        </vbox>
+        <br />
+        <label value="Write your Creepypasta!" />
+        <input ref="storyText" value="Add your story here"/>
       </form>
       )
   }
