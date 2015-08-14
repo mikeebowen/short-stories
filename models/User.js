@@ -47,4 +47,4 @@ userSchema.methods.generateToken = function (secret, callback) {
 
 module.exports = mongoose.model('User', userSchema);
 
-//'{"email": "test2@example.com", "password": "123", "userName": "test user2"}'
+//'{"email": "test4@example.com", "password": "123", "userName": "testuser4"}'

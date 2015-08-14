@@ -26,12 +26,14 @@ require('./lib/passport_strat')(passport);
 require('./routes/story_routes')(storyRoutes);
 require('./routes/auth_routes')(usersRoutes, passport);
 
+app.use(passport.initialize());
+
 app.use('/api', storyRoutes);
 app.use('/api', usersRoutes);
 
-app.get('/', function (req, res) {
-  res.send('Server can load a page');
-});
+// app.get('/', function (req, res) {
+//   res.send('Server can load a page');
+// });
 
 app.listen(port, function() {
   console.log('Server started on port: ' + port + '\n' + time);

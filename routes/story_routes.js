@@ -12,6 +12,7 @@ module.exports = function (router) {
     //create new story instance
     var newStory = new Story(req.body);
     newStory.authorId = req.user._id;
+    newStory.author = req.user.userName;
     //save data from req.body as new story
     newStory.save(function (err, data) {
       if (err) {
@@ -46,6 +47,16 @@ module.exports = function (router) {
     });
   });
 
+  router.get('/mystories', eatAuth, function (req, res) {
+    Story.find({authorId: req.user._id}, function (err, data) {
+      if (err) {
+        console.log(err);
+        return res.status(500).json({msg: 'internal server error'});
+      }
+      res.json(data);
+    });
+  });
+
   router.get('/stories/showstory/:id', function (req, res) {
     Story.find({'_id': req.params.id}, function (err, data) {
       if (err) {
@@ -53,16 +64,6 @@ module.exports = function (router) {
         return res.status(404).json({msg: 'page not found'});
       }
       console.log(data);
-      res.json(data);
-    });
-  });
-
-  router.get('/mystories', eatAuth, function (req, res) {
-    Story.find({authorId: req.user._id}, function (err, data) {
-      if (err) {
-        console.log(err);
-        return res.status(500).json({msg: 'internal server error'});
-      }
       res.json(data);
     });
   });
