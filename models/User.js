@@ -5,7 +5,7 @@ var bcrypt = require('bcrypt-nodejs');
 var eat = require('eat');
 
 var userSchema = mongoose.Schema({
-  userName: String,
+  userName: {type: String, unique: true},
   randomString: String,
   basic: {
     email: {type: String, unique: true},
@@ -47,4 +47,4 @@ userSchema.methods.generateToken = function (secret, callback) {
 
 module.exports = mongoose.model('User', userSchema);
 
-//{email: 'test1@example.com', password: 'password123', username: 'test user1'}
+//'{"email": "test2@example.com", "password": "123", "userName": "test user2"}'
