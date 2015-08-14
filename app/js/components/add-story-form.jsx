@@ -7,7 +7,7 @@ module.exports = React.createClass({
   submitHandler: function (event) {
     event.preventDefault();
 
-    var author = React.findDOMNode(this.refs.authorField).value.trim();
+    var author = React.findDOMNode(this.refs.author).value.trim();
     var categories = React.findDOMNode(this.refs.categories).value.trim();
     var storyTitle = React.findDOMNode(this.refs.storyTitle).value.trim();
     var storyText = React.findDOMNode(this.refs.storyText).value.trim();
@@ -20,18 +20,15 @@ module.exports = React.createClass({
 
     return(
       <form onSubmit={this.submitHandler}>
-        <input type="checkbox" ref="categories" value="fiction">Fiction</input>
-        <input type="checkbox" ref="categories" value="CreepyPasta">CreepyPasta</input>
-        <input type="checkbox" ref="categories" value="Horror">Horror</input>
-        <input type="checkbox" ref="categories" value="Monsters">Monsters</input>
+        <input ref="categories" placeholder="Category" />
         <br />
         <input ref="storyTitle" placeholder="Title" />
         <br />
-        <input ref="author" placeholder="author" />
+        <input ref="author" placeholder="Author" />
         <br />
         <input ref="storyText" placeholder="Add your story here"/>
         <br />
-        <input type="submit" value="Make New Quote"></input>
+        <input type="submit" value="Save Story"></input>
       </form>
       )
   }

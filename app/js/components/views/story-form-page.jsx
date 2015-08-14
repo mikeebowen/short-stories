@@ -18,6 +18,7 @@ module.exports = React.createClass({
       if (err) {
         return console.log(err);
       }
+      console.log(storyObj);
     }.bind(this));
   },
 
