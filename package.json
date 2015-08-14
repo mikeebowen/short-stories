@@ -21,7 +21,9 @@
   },
   "homepage": "https://github.com/mrbgit/short-stories#readme",
   "dependencies": {
+    "bcrypt-nodejs": "0.0.3",
     "body-parser": "^1.13.1",
+    "eat": "^0.1.1",
     "express": "^4.13.0",
     "jQuery": "^1.7.4",
     "jquery": "^2.1.4",
