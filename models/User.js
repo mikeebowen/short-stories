@@ -18,13 +18,13 @@ userSchema.methods.generateHash = function (password, callback) {
     // handle error
     if (err) {
       return res.status(500).json({msg: 'internal server error'});
-    };
+    }
     // pass the password, salt and callback function into bcrypt hash method
     bcrypt.hash(password, salt, null, function (err, hash) {
       // handle error
       if (err) {
         return res.status(500).json({msg: 'internal server error'});
-      };
+      }
       callback(null, hash);
     });
   });
@@ -36,7 +36,7 @@ userSchema.methods.checkPassword = function (password, callback) {
     if (err) {
       console.log(err);
       return res.status(500).json({msg: 'internal server error'});
-    };
+    }
     callback(null, result);
   });
 };

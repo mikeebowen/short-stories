@@ -22,7 +22,7 @@ module.exports = function (router, passport) {
       if (err) {
         console.log(err);
         return res.status(500).json({msg: 'internal server error'});
-      };
+      }
       // respond with the data
       res.json(data);
     });
@@ -44,7 +44,7 @@ module.exports = function (router, passport) {
       if (err) {
         console.log(err);
         return res.status(500).json({msg: 'internal server error'});
-      };
+      }
       newUser.basic.password = hash;
     });
     // save new user
@@ -53,13 +53,13 @@ module.exports = function (router, passport) {
       if (err) {
         console.log(err);
         return res.status(500).json({msg: 'Could not create user'});
-      };
+      }
       // generate token
       user.generateToken(process.env.APP_SECRET, function (err, token) {
         if (err) {
           console.log(err);
           return res.status(500).json({msg: 'error generating token'});
-        };
+        }
         // respond with json of token
         res.json({token: token});
       });
@@ -72,7 +72,7 @@ module.exports = function (router, passport) {
       if (err) {
         console.log(err);
         return res.status(500).json({msg: 'error generating token'});
-      };
+      }
       res.json({token: token});
     });
   });
