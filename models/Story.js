@@ -3,6 +3,7 @@
 var mongoose = require('mongoose');
 
 var storySchema = mongoose.Schema({
+  authorId: mongoose.Schema.ObjectId,
   author: String,
   categories: Array,
   storyTitle: String,
