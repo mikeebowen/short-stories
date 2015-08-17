@@ -63,7 +63,7 @@
     "karma-opera-launcher": "^0.3.0",
     "karma-phantomjs-launcher": "^0.2.0",
     "karma-sourcemap-loader": "^0.3.5",
-    "karma-webpack": "^1.5.1",
+    "karma-webpack": "^1.7.0",
     "mocha": "^2.2.5",
     "node-libs-browser": "^0.5.2",
     "phantomjs": "^1.9.17",
