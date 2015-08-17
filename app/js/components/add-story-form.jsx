@@ -13,13 +13,13 @@ module.exports = React.createClass({
     var storyText = React.findDOMNode(this.refs.storyText).value.trim();
 
     this.props.submit({author: author, categories: categories, storyTitle: storyTitle, storyText: storyText});
-
+    document.getElementById('story-form').reset();
   },
 
   render: function () {
 
     return(
-      <form onSubmit={this.submitHandler}>
+      <form id="story-form" onSubmit={this.submitHandler}>
         <input ref="categories" placeholder="Category" />
         <br />
         <input ref="storyTitle" placeholder="Title" />
