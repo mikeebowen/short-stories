@@ -49,6 +49,10 @@
 	__webpack_require__(1);
 	// require('./story_test.js');
 
+	/*require('./simple_test', function (simple_test) {
+	    //foo is now loaded.
+	});*/
+
 
 /***/ },
 /* 1 */

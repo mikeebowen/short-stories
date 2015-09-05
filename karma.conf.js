@@ -15,10 +15,10 @@ module.exports = function(config) {
 
     // list of files / patterns to load in the browser
     files: [
-    './node_modules/phantomjs-polyfill/bind-polyfill.js',
-    './node_modules/requirejs/require.js',
-    './node_modules/karma-requirejs/lib/adapter.js',
-    './test/karma_tests/*test.js'
+    __dirname + '/node_modules/phantomjs-polyfill/bind-polyfill.js',
+    __dirname + '/node_modules/requirejs/require.js',
+    __dirname + '/node_modules/karma-requirejs/lib/adapter.js',
+    __dirname + '/test/karma_tests/*test.js'
     ],
 
     //plugins to start browsers
