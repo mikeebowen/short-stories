@@ -13,4 +13,4 @@ var storySchema = mongoose.Schema({
 module.exports = mongoose.model('Story', storySchema);
 
 // story data example
-// '{categories": ["fiction", "adventure"], "storyTitle": "Test Title 3", "storyText": "test story text, blah blah blah something something"}'
+// '{"categories": ["fiction", "adventure"], "storyTitle": "Test Title 5", "storyText": "test story text, blah blah blah something something", "eat": ""}'

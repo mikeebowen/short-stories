@@ -5,18 +5,20 @@ module.exports = function(config) {
   config.set({
 
     // base path that will be used to resolve all patterns (eg. files, exclude)
-    basePath: '',
+    basePath: '/',
 
 
     // frameworks to use
     // available frameworks: https://npmjs.org/browse/keyword/karma-adapter
-    frameworks: ['jasmine'],
+    frameworks: ['jasmine', 'requirejs'],
 
 
     // list of files / patterns to load in the browser
     files: [
     './node_modules/phantomjs-polyfill/bind-polyfill.js',
-        'test/karma_tests/*test.js'
+    './node_modules/requirejs/require.js',
+    './node_modules/karma-requirejs/lib/adapter.js',
+    './test/karma_tests/*test.js'
     ],
 
     //plugins to start browsers
@@ -29,7 +31,9 @@ module.exports = function(config) {
     'karma-ie-launcher',
     'karma-jasmine',
     'karma-chai',
-    'karma-webpack'
+    'karma-webpack',
+    'karma-requirejs',
+    'karma-script-launcher'
     ],
 
 
@@ -90,6 +94,9 @@ module.exports = function(config) {
 
     // Continuous Integration mode
     // if true, Karma captures browsers, runs the tests and exits
-    singleRun: true
+    singleRun: true,
+
+    // Set timeout to 100 seconds
+    // browserNoActivityTimeout: 100000
   });
 };
