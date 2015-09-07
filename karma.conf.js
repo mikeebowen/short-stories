@@ -18,7 +18,7 @@ module.exports = function(config) {
     __dirname + '/node_modules/phantomjs-polyfill/bind-polyfill.js',
     __dirname + '/node_modules/requirejs/require.js',
     __dirname + '/node_modules/karma-requirejs/lib/adapter.js',
-    __dirname + '/test/karma_tests/*test.js'
+    __dirname + '/test/karma_tests/*entry.js'
     ],
 
     //plugins to start browsers
