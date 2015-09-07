@@ -1,3 +1,5 @@
+'use strict';
+
 var React = require('react/addons');
 var Story = require('../../app/js/components/story.jsx');
 var TestUtils = React.addons.TestUtils;

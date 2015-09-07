@@ -5,5 +5,5 @@
 npm-debug.log
 db/
 build/
-test/karma_test/*bundle.js
-test/client/bundle.js
+test/karma_tests/*bundle.js
+test/client/*bundle.js
