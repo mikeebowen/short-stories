@@ -12,9 +12,9 @@ module.exports = React.createClass({
 
   render: function () {
     return (
-      <ul>
+      <section>
         {this.renderStories()}
-      </ul>
+      </section>
     );
   }
 

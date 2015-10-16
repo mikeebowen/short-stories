@@ -6,12 +6,12 @@ var React = require('react');
 module.exports = React.createClass({
   render: function () {
     return (
-        <li>
+        <div>
         <h2>{this.props.data.storyTitle}</h2>
         <h3>By: {this.props.data.author}</h3>
         <h4>Categories: {this.props.data.categories}</h4>
         <p>{this.props.data.storyText}</p>
-        </li>
+        </div>
       );
   }
 })
